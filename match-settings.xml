@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<opencv_storage>
+  <!-- parameters for ROI identification -->
+  <canny-roi-low>100</canny-roi-low>
+  <canny-roi-high>200</canny-roi-high>
+  <canny-roi-kernel>3</canny-roi-kernel>
+  <circularity-threshold>0.2</circularity-threshold>
+  <minimum-roi-area>20000</minimum-roi-area>
+  <!-- match settings -->
+  <canny-match-low>0</canny-match-low>
+  <canny-match-high>100</canny-match-high>
+  <canny-match-kernel>3</canny-match-kernel>
+  <vertical-segments>8</vertical-segments>
+  <horizontal-segments>8</horizontal-segments>
+  <!-- difference match settings -->
+  <diff-threshold>0.5</diff-threshold>
+  <!-- templates for specific identification -->
+  <templates>
+    <_>
+      <image>img/stop-small.png</image>
+      <name>Stop</name>
+      <signal>s</signal>
+    </_>
+    <_>
+      <image>img/forward-small.png</image>
+      <name>Forward</name>
+      <signal>f</signal>      
+    </_>
+    <_>
+      <image>img/turn-left-small.png</image>
+      <name>"Turn Left"</name>
+      <signal>l</signal>      
+    </_>
+    <_>
+      <image>img/turn-right-small.png</image>
+      <name>"Turn Right"</name>
+      <signal>r</signal>      
+    </_>
+  </templates>
+  <camera>0</camera>
+  <serial-port>"/dev/ttyUSB0"</serial-port>
+  <window-name>"Computer Vision Demo"</window-name>
+  <counts-for-signal>5</counts-for-signal>
+</opencv_storage>

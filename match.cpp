@@ -215,6 +215,7 @@ int main(int argc, char** argv) {
     }
     else {
       cout << "Opened Arduino on port " << serial_port_name << endl;
+    }
   }
 
   window_name = (string) fs["window-name"];

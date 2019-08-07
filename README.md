@@ -1,8 +1,34 @@
 # gateway-computer-vision
 
+## Overview
+
+This program is designed to demonstrate computer vision by performing an action
+in response to recognizing various signs. Here's how it works:
+
+1. First, the program finds an ROI where it thinks a sign might be. This is 
+accomplished by finding edges with the Canny algorithm, and then extracting
+contours from this image. The largest acceptably circulary contour is selected
+as the ROI and passed on to the next phase. (See **match-settings.xml** below
+for more on what "acceptably circular" means.)
+
+2. Next, the program tries to figure out which sign is contained within the ROI.
+It does this by again transforming it with the Canny algorithm to find edges,
+and then splits the ROI into many pieces. Within each piece, it examines how
+many edge pixels are present, and then compares this number with the
+corresponding pieces in each template. The template that matches most closely
+is identified as the match.
+
+3. Finally, the program waits for a few frames to ensure that the match is
+stable, and gain confidence that this is not some transient artifact but the
+real sign. Once this interval has passed and the match hasn't wavered, the
+program sends a signal to the Arduino to let it know that a match has been made.
+It will not send another signal until a new sign has been identified, or until
+the sign moves out and back in to the camera's FOV.
+
 ## match-settings.xml
 
-This file is the configuration file for the demo. The tags the file accepts are detailed below.
+This file is the configuration file for the demo. The tags the file accepts
+are detailed below.
 
 #### ROI identification parameters
 
@@ -36,8 +62,9 @@ These tags control the way the program matches an ROI onto a template.
 
 #### Templates
 
-The `<templates>` tag contains the template images and some ancillary data on what to
-do with them. Each template is nested inside a `<_>...</_>` tag and contains the following tags:
+The `<templates>` tag contains the template images and some ancillary data
+on what to do with them. Each template is nested inside a `<_>...</_>` tag
+and contains the following tags:
 
 | Tag      | Function                                                         |
 |----------|------------------------------------------------------------------|

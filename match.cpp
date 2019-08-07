@@ -1,17 +1,8 @@
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*\
-|                                                                                                                               |
-|                                                                                                                               |
-|                                                                                                                               |
-|                                                                                                                               |
-|                                                                                                                               |
-|                                                                                                                               |
-|                                                                                                                               |
-\*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
 #include <opencv2/opencv.hpp>
 #include <SerialStream.h>
 #include <iostream>
 #include <vector>
+#include <math.h>
 #include <chrono>    //benchmarking (can be removed for production)
 
 
@@ -429,7 +420,7 @@ type_match get_match( Mat region_, vector<tmplt>& templates,
       denom1 += a*a;
       denom2 += b*b;
     }
-    m.match_level = num / (denom1 * denom2);
+    m.match_level = num / sqrt(denom1 * denom2);
     if ( m.match_level > best.match_level ) {
       best = m;
     }

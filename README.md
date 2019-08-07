@@ -18,7 +18,7 @@ These tags control the way the program looks for a region to match to a template
 
 \*The circularity of a contour is determined by
 
-<img src="https://github.com/scimusmn/gateway-computer-vision/blob/master/img/circularity.png" alt="C = (4 PI A)/p^2">
+<img src="https://github.com/scimusmn/gateway-computer-vision/blob/master/img/circularity.png" height="75" alt="C = (4 PI A)/p^2">
 
 where A is the area of the contour and p is the contour's perimeter.
 

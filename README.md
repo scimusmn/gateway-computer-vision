@@ -18,7 +18,7 @@ These tags control the way the program looks for a region to match to a template
 
 \*The circularity of a contour is determined by
 
-![circularity = (4 \* pi \* A) / p^2](https://github.com/scimusmn/gateway-laparoscopy-camera/img/circularity.png)
+![alt text](https://github.com/scimusmn/gateway-laparoscopy-camera/img/circularity.png "circularity = (4 \* pi \* A) / p^2")
 
 where A is the area of the contour and p is the contour's perimeter.
 

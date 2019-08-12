@@ -17,6 +17,11 @@
   <!-- templates for specific identification -->
   <templates>
     <_>
+      <image>img/go-small.png</image>
+      <name>Go</name>
+      <signal>g</signal>
+    </_>
+    <_>
       <image>img/stop-small.png</image>
       <name>Stop</name>
       <signal>s</signal>
@@ -37,7 +42,7 @@
       <signal>r</signal>      
     </_>
   </templates>
-  <camera>0</camera>
+  <camera>2</camera>
   <serial-port>"/dev/ttyUSB0"</serial-port>
   <window-name>"Computer Vision Demo"</window-name>
   <counts-for-signal>5</counts-for-signal>

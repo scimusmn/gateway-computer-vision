@@ -42,7 +42,7 @@
       <signal>r</signal>      
     </_>
   </templates>
-  <camera>2</camera>
+  <camera>0</camera>
   <serial-port>"/dev/ttyUSB0"</serial-port>
   <window-name>"Computer Vision Demo"</window-name>
   <counts-for-signal>5</counts-for-signal>
